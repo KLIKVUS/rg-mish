@@ -1,0 +1,32 @@
+.slider {
+    display: flex;
+    user-select: none;
+}
+
+.slider #left, #right {
+    font-size: 4vh;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #55555570;
+}
+
+.slider .container {
+    overflow: hidden;
+    display: flex;
+}
+
+.INcontainer {
+    display: flex;
+    position: relative;
+    left: 0;
+
+    transition-property: left;
+    transition-duration: 0.5s;
+}
+
+.slider .cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
