@@ -4,17 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--{ Шрифты }-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!--{ Иконки }-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!--{ Скрипт для слайдера, Стайл для слайдера }-->
     <script src="script.js"></script>
+    <link rel="stylesheet" href="styles/slider-style.css">
+    <!--{ Скрипт основной, Стиль основной }-->
+    <script src="scripts/slider-script.js"></script>
     <link rel="stylesheet" href="style.css">
 
     <title>MISH</title>
 </head>
 <body>
-    <div id="disqus_thread"></div>
+    <nav>
+        <!-- <img src="images/syte-ico.svg" alt="syte-ico"> -->
+        <a href="#">
+            <img src="images/syte-ico.svg" alt="syte-ico">
+            RG
+        </a>
+        <a href="#">Информация</a>
+        <a href="#">Скрины</a>
+        <a href="#">Ссылки</a>
+    </nav>
+
+    <header class="flex WH"><h1>MISH</h1></header>
+
+    <main>
+        <!--{ Оснаовная информация }-->
+        <section class="flex WH otherBgG" id="main-info">
+            <h1>Главный герой и геймплей</h1>
+            <div class="HideSon">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, est.</p>
+                <p>Deleniti numquam atque molestias quis. Itaque ut natus tenetur suscipit.</p>
+                <p>Similique, explicabo! Quas fugiat accusamus eius pariatur quo consectetur vitae?</p>
+            </div>
+        </section>
+        <!--{ Скрины и видео }-->
+        <section class="flex WH otherBgB" id="screenshots">
+            <h1>Скрины и видео</h1>
+            <div class="HideSon">
+                <div class="slider">
+                    <button id="left"><i class="fas fa-angle-left"></i></button>
+                    <div class="container">
+                        <div class="INcontainer">
+                            <div class="cont">
+                                <p>ЭТО ВИДЕО</p>
+                            </div>
+                            <div class="cont">
+                                <img src="images/scrin1.jpg" alt="screenshot1">
+                            </div>
+                            <div class="cont">
+                                <img src="images/scrin2.jpg" alt="screenshot2">
+                            </div>
+                            <div class="cont">
+                                <img src="images/scrin3.jpg" alt="screenshot3">
+                            </div>
+                        </div>
+                    </div>
+                    <button id="right"><i class="fas fa-angle-right"></i></button>
+                </div>
+            </div>
+        </section>
+        <!--{ Информация проекта }-->
+        <section class="flex WH otherBgG" id="project-info">
+            <h1>Информация о проекте</h1>
+            <div class="HideSon">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, cum.</p>
+                <p>Tenetur voluptate deserunt doloremque aspernatur natus non expedita sequi esse.</p>
+                <p>Non iure ipsa modi excepturi corrupti aliquid placeat vel vero!</p>
+            </div>
+        </section>
+        <!--{ Комментарии }-->
+        <section class="flex WH otherBgB" id="comment">
+            <h1>Оставить Комментарий</h1>
+            <!--{ Комментарии }-->
+            <div id="disqus_thread" class="HideSon"></div>
+        </section>
+    </main>
+
+    <footer class="flex">Сайт сделан студентом колледжа ItHub для учебного процесса.<br>Материалы взяты из сети интернет и права принадлежат их авторам.</footer>
+
+    <!--{ Скрипты для комментариев }-->
     <script>
         var disqus_config = function () {
-        this.page.url = "";
-        this.page.identifier = "mish.html";
+        this.page.url = "https://mrapar.github.io/rg-mish/";
+        this.page.identifier = "index.html";
         };
         (function() {
         var d = document, s = d.createElement('script');
@@ -24,6 +102,6 @@
         })();
     </script>
 
-    <noscript>Please enable JavaScript.</a></noscript>
+    <noscript>Please enable JavaScript.</noscript>
 </body>
 </html>
