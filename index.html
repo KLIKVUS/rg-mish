@@ -6,9 +6,10 @@
 
     <!--{ Шрифты }-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <!--{ Иконки }-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/ico" href="images/icon.ico">
 
     <!--{ Скрипт для слайдера, Стайл для слайдера }-->
     <script src="script.js"></script>
@@ -21,17 +22,15 @@
 </head>
 <body>
     <nav>
-        <!-- <img src="images/syte-ico.svg" alt="syte-ico"> -->
-        <a href="#">
-            <img src="images/syte-ico.svg" alt="syte-ico">
-            RG
-        </a>
-        <a href="#">Информация</a>
-        <a href="#">Скрины</a>
-        <a href="#">Ссылки</a>
+        <a href="#" class="flex"><img src="images/site-ico.svg" alt="site-ico">RG</a>
+        <div class="site-links">
+            <a href="#main-info" class="scroll-to">Информация</a>
+            <a href="#screenshots" class="scroll-to">Скрины</a>
+            <a href="#project-info" class="scroll-to">Ссылки</a>
+        </div>
     </nav>
 
-    <header class="flex WH"><h1>MISH</h1></header>
+    <header class="flex WH"><h1><span id="header-name"></span></h1></header>
 
     <main>
         <!--{ Оснаовная информация }-->
