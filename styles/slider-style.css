@@ -1,6 +1,7 @@
 .slider {
     display: flex;
     user-select: none;
+    position: relative;
 }
 
 .slider #left, #right {
@@ -8,6 +9,22 @@
     border: none;
     outline: none;
     cursor: pointer;
+    background: #ffffff00;
+
+    width: 52.5%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+.slider #left {
+    text-align: left;
+    left: -2.5%;
+}
+.slider #right {
+    text-align: right;
+    right: -2.5%;
+}
+.slider i {
     background: #55555570;
 }
 

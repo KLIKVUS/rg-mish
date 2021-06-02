@@ -22,7 +22,14 @@
 </head>
 <body>
     <nav>
-        <a href="#" class="flex"><img src="images/site-ico.svg" alt="site-ico">RG</a>
+        <div class="nav-main">
+            <a href="https://qiwi.com/" class="flex"><img src="images/site-ico.svg" alt="site-ico">RG</a>
+
+            <button id="navbar-toggler" type="button">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
+        </div>
+
         <div class="site-links">
             <a href="#main-info" class="scroll-to">Информация</a>
             <a href="#screenshots" class="scroll-to">Скрины</a>
@@ -33,56 +40,73 @@
     <header class="flex WH"><h1><span id="header-name"></span></h1></header>
 
     <main>
-        <!--{ Оснаовная информация }-->
-        <section class="flex WH otherBgG" id="main-info">
-            <h1>Главный герой и геймплей</h1>
-            <div class="HideSon">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, est.</p>
-                <p>Deleniti numquam atque molestias quis. Itaque ut natus tenetur suscipit.</p>
-                <p>Similique, explicabo! Quas fugiat accusamus eius pariatur quo consectetur vitae?</p>
-            </div>
-        </section>
-        <!--{ Скрины и видео }-->
-        <section class="flex WH otherBgB" id="screenshots">
-            <h1>Скрины и видео</h1>
-            <div class="HideSon">
-                <div class="slider">
-                    <button id="left"><i class="fas fa-angle-left"></i></button>
-                    <div class="container">
-                        <div class="INcontainer">
-                            <div class="cont">
-                                <p>ЭТО ВИДЕО</p>
-                            </div>
-                            <div class="cont">
-                                <img src="images/scrin1.jpg" alt="screenshot1">
-                            </div>
-                            <div class="cont">
-                                <img src="images/scrin2.jpg" alt="screenshot2">
-                            </div>
-                            <div class="cont">
-                                <img src="images/scrin3.jpg" alt="screenshot3">
+        <!--{ Блок с картами }-->
+        <div class="CardsList">
+            <!--{ Оснаовная информация }-->
+            <section class="flex WH otherBgG CardOpen" id="main-info">
+                <h1>Главный герой и геймплей</h1>
+                <div class="HideSon">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, est.</p>
+                    <p>Deleniti numquam atque molestias quis. Itaque ut natus tenetur suscipit.</p>
+                    <p>Similique, explicabo! Quas fugiat accusamus eius pariatur quo consectetur vitae?</p>
+                </div>
+
+                <div id="CloseCard"></div>
+            </section>
+            <!--{ Скрины и видео }-->
+            <section class="flex WH otherBgB CardOpen" id="screenshots">
+                <h1>Скрины и видео</h1>
+                <div class="HideSon">
+                    <div class="slider">
+                        <button id="left"><i class="fas fa-angle-left"></i></button>
+                        <button id="right"><i class="fas fa-angle-right"></i></button>
+                        <div class="container">
+                            <div class="INcontainer">
+                                <div class="cont">
+                                    <!--{ ЭТО ВИДЕО }-->
+                                    <video autoplay muted loop controls>
+                                        <source src="video/cow dance.mp4" type='video/mp4'>
+                                    </video>
+                                </div>
+                                <div class="cont">
+                                    <img src="images/scrin1.jpg" alt="screenshot1">
+                                </div>
+                                <div class="cont">
+                                    <img src="images/scrin2.jpg" alt="screenshot2">
+                                </div>
+                                <div class="cont">
+                                    <img src="images/scrin3.jpg" alt="screenshot3">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <button id="right"><i class="fas fa-angle-right"></i></button>
                 </div>
-            </div>
-        </section>
-        <!--{ Информация проекта }-->
-        <section class="flex WH otherBgG" id="project-info">
-            <h1>Информация о проекте</h1>
-            <div class="HideSon">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, cum.</p>
-                <p>Tenetur voluptate deserunt doloremque aspernatur natus non expedita sequi esse.</p>
-                <p>Non iure ipsa modi excepturi corrupti aliquid placeat vel vero!</p>
-            </div>
-        </section>
-        <!--{ Комментарии }-->
-        <section class="flex WH otherBgB" id="comment">
-            <h1>Оставить Комментарий</h1>
+
+                <div id="CloseCard"></div>
+            </section>
+            <!--{ Информация проекта }-->
+            <section class="flex WH otherBgG CardOpen" id="project-info">
+                <h1>Информация о проекте</h1>
+                <div class="HideSon">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, cum.</p>
+                    <p>Tenetur voluptate deserunt doloremque aspernatur natus non expedita sequi esse.</p>
+                    <p>Non iure ipsa modi excepturi corrupti aliquid placeat vel vero!</p>
+                </div>
+
+                <div id="CloseCard"></div>
+            </section>
+        </div>
+
+        <!--{ Остатки }-->
+        <div class="Other">
+            <h1></h1>
             <!--{ Комментарии }-->
-            <div id="disqus_thread" class="HideSon"></div>
-        </section>
+            <section class="flex" id="comment">
+                <h1>Оставить Комментарий</h1>
+                <!--{ Комментарии }-->
+                <div id="disqus_thread"></div>
+            </section>
+        </div>
     </main>
 
     <footer class="flex">Сайт сделан студентом колледжа ItHub для учебного процесса.<br>Материалы взяты из сети интернет и права принадлежат их авторам.</footer>

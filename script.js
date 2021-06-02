@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     var count = 0;
     var typi = "";
     // Переменные карточек  
-    const cards = document.querySelectorAll("#main-info, #screenshots, #project-info, #comment");
+    const cards = document.querySelectorAll("#main-info, #screenshots, #project-info");
     // Для закрытия и открытия карт
     var card = "";
     var cardChild = "";
@@ -47,20 +47,41 @@ window.addEventListener("load", () => {
                     cardChild.classList.add("unHideSon");
                 }
             });
+            
+            btnOpenClose()
         }
     }
     //  Закрытие карточки
     const CloseCard = (e) => {
-        if (e.keyCode === 27 && cardChild.classList == "unHideSon") {
-            OpeningCard = false;
-            cardChild.classList.add("HideSon");
-            cardChild.classList.remove("unHideSon");
-            cards.forEach(i => {
-                i.style = null;
-                i.classList.remove("hideCard");
-            })
+        if (e != undefined) { e.stopPropagation() }
+        OpeningCard = false;
+        cardChild.classList.add("HideSon");
+        cardChild.classList.remove("unHideSon");
+        cards.forEach(i => {
+            i.style = null;
+            i.classList.remove("hideCard");
+        })
+
+        btnOpenClose()
+    }
+    // Кномпачка закрыть/открыть
+    const btnOpenClose = () => {
+        if (OpeningCard == true) {
+            card.classList.remove("CardOpen");
+            card.querySelector("#CloseCard").classList.add("CloseCard");
+        } else {
+            card.querySelector("#CloseCard").classList.remove("CloseCard");
+            card.classList.add("CardOpen");
         }
     }
+
+    // Кнупочка для открытия меню на андроид
+    const NavbarToggler = document.querySelector("#navbar-toggler");
+    const NavbarMenu = document.querySelector(".site-links");
+    const openMMenu = () => {
+        NavbarMenu.classList.toggle("site-links-show");
+    }
+    NavbarToggler.addEventListener("click", openMMenu)
     
     // Плавная прокрутка, которая работает галимо
     document.querySelectorAll('a.scroll-to').forEach(link => {
@@ -78,6 +99,22 @@ window.addEventListener("load", () => {
 
 
     // Активаторы всяких функций
-    cards.forEach(cards => { cards.addEventListener("click", OpenCard); })
-    window.addEventListener("keydown", CloseCard);
+    const work = () => {
+        cards.forEach(cards => { cards.addEventListener("click", OpenCard) });
+        cards.forEach(cards => { cards.querySelector("#CloseCard").addEventListener("click", CloseCard) });
+        window.addEventListener("keydown", (e) => { if (e.keyCode === 27 && cardChild.classList == "unHideSon") CloseCard() });
+    }
+
+
+    if (window.innerWidth > "500") {
+        return work(true);
+    } else {
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > "500") {
+                return work();
+            } else if (window.innerWidth <= "500") {
+                return
+            }
+        })
+    }
 })

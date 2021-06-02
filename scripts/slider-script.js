@@ -7,7 +7,11 @@ window.addEventListener("load", () => {
     const scrollEl = document.querySelectorAll(".cont");
     let scrollPos = 0;
     // Размер картинки
-    var imgSize = 125;
+    if (window.innerWidth > 400) {
+        var imgSize = Math.floor(window.innerWidth / 15);
+    } else {
+        var imgSize = Math.floor(window.innerWidth / 10);
+    }
     // Размеры тегов, которые содержат картинки
     INcontainer.style.width = imgSize + "vh";
     scrollEl.forEach(scrollEl => { scrollEl.firstElementChild.style.width = imgSize + "vh"; })
@@ -25,7 +29,7 @@ window.addEventListener("load", () => {
             INcontainer.style.left = (scrollPos -= imgSize) + "vh";
         } else {
             scrollPos = 0;
-            INcontainer.style.left = "0vh";
+            INcontainer.style.left = "0";
         }
     }
 
