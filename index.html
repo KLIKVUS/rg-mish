@@ -12,11 +12,13 @@
     <link rel="icon" type="image/ico" href="images/icon.ico">
 
     <!--{ Скрипт для слайдера, Стайл для слайдера }-->
-    <script src="script.js"></script>
+    <script src="scripts/slider-script.js"></script>
     <link rel="stylesheet" href="styles/slider-style.css">
     <!--{ Скрипт основной, Стиль основной }-->
-    <script src="scripts/slider-script.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <!--{ Стили для телефона }-->
+    <link rel="stylesheet" href="styles/style-M.css">
 
     <title>MISH</title>
 </head>
@@ -45,10 +47,17 @@
             <!--{ Оснаовная информация }-->
             <section class="flex WH otherBgG CardOpen" id="main-info">
                 <h1>Главный герой и геймплей</h1>
-                <div class="HideSon">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, est.</p>
-                    <p>Deleniti numquam atque molestias quis. Itaque ut natus tenetur suscipit.</p>
-                    <p>Similique, explicabo! Quas fugiat accusamus eius pariatur quo consectetur vitae?</p>
+                <div class="CardSon flex HideSon" style="flex-direction: row;">
+                    <div>
+                        <p class="Pem">
+                            Это главный герой и он ищет приключения на свою жопку! Также он выглядит мимимишно и наверное это всё, что можно о нем сказать.
+                        </p>
+                        <p class="Pem">
+                            Теперь пару слов о геймплее. Пока о нём известно мало, но понятно одно! Возможно он будет интересным) Ещё есть слушок, что планируется сделать некий клон mincraft, но в 2D с элементами mmo/rpg и подземельями.
+                        </p>
+                    </div>
+
+                    <img src="images/jubz.png" alt="jubz" style="padding: 5% 5% 0 5%;">
                 </div>
 
                 <div id="CloseCard"></div>
@@ -86,15 +95,73 @@
             </section>
             <!--{ Информация проекта }-->
             <section class="flex WH otherBgG CardOpen" id="project-info">
-                <h1>Информация о проекте</h1>
-                <div class="HideSon">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, cum.</p>
-                    <p>Tenetur voluptate deserunt doloremque aspernatur natus non expedita sequi esse.</p>
-                    <p>Non iure ipsa modi excepturi corrupti aliquid placeat vel vero!</p>
-                </div>
+                <h1>Ссылки и информация проекта</h1>
+                <div class="CardSon flex HideSon">
+                    <div class="ul-liFath">
+                        <div style="width: 20vh; margin: 1vh;">
+                            <h2>Создатели игры</h2>
+                            <ul>
+                                <li>
+                                    <h4>Идея: </h4>
+                                    <p>возможно моя, а может и нет.</p>
+                                </li>
 
-                <div id="CloseCard"></div>
+                                <li>
+                                    <h4>Художник: </h4>
+                                    <p>sprit-ы взяты из интернета и частично нарисованы своими силами.</p>
+                                </li>
+
+                                <li>
+                                    <h4>Реализация</h4>
+                                    <p>я и гайды с ютуба.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="width: 20vh; margin: 1vh;">
+                            <h2>Системные требования</h2>
+                            <ul>
+                                <li>
+                                    <h4>Операционная система: </h4>
+                                    <p>Windows 7/8/10 (64/32 - разрядные версии)</p>
+                                </li>
+
+                                <li>
+                                    <h4>Процессор: </h4>
+                                    <p>Может i3, а может i7</p>
+                                </li>
+
+                                <li>
+                                    <h4>Оперативная память: </h4>
+                                    <p>Любая подойдет, наверное</p>
+                                </li>
+
+                                <li>
+                                    <h4>Видеокарта: </h4>
+                                    <p>Та фиг его знает</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="images/jubz.png" target="_blank" download title="DOWNLOAD GAME-MISH"><button class="downloadBtn"><i class="fas fa-download"></i><h3>СКАЧАТЬ</h3></button></a>
+                    <a href="" id="formLink"><h5>→Заявка на бета тест←</h5></a>
+
+                    <div id="CloseCard"></div>
+                </div>
             </section>
+        </div>
+
+        <div class="downloadForm" >
+            <div class="cross"><i class="fas fa-times"></i></div>
+
+            <div class="box">
+                <div>
+                    <h2>Бета тест!</h2>
+                    <p>На данный момент игра находиться в бета тесте и есть ряд ошибок и багов. Если вы хотите принять участие в тесте, то можете заполнить форму.</p>
+                    <h3>Представим что тут есть форма</h3>
+                </div>
+            </div>
         </div>
 
         <!--{ Остатки }-->

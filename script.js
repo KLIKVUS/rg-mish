@@ -35,7 +35,7 @@ window.addEventListener("load", () => {
     const OpenCard = (e) => {
         if (OpeningCard == false) {
             OpeningCard = true;
-            if (e.target.tagName == "H1") { card = e.target.parentElement; } else { card = e.target; }
+            if (e.tagName == "SECTION") { card = e } else if (e.target.tagName == "H1") { card = e.target.parentElement; } else { card = e.target; };
             cardChild = card.firstElementChild.nextElementSibling;
             cards.forEach(i => {
                 if (card != i) {
@@ -83,8 +83,8 @@ window.addEventListener("load", () => {
     }
     NavbarToggler.addEventListener("click", openMMenu)
     
-    // Плавная прокрутка, которая работает галимо
-    document.querySelectorAll('a.scroll-to').forEach(link => {
+    // Плавная прокрутка, которая работает галимо и откртие карточек
+    document.querySelectorAll("a.scroll-to").forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault()
             
@@ -94,27 +94,42 @@ window.addEventListener("load", () => {
                 behavior: 'smooth',
                 block: 'start'
             })
+            
+            if (OpeningCard == true && window.innerWidth > "500") { CloseCard() };
+            if (window.innerWidth > "500") { OpenCard(document.getElementById(blockID.substr(1))); }
         })
     })
+
+    // Форма загрузки
+    const showDownloadForm = (e) => {
+        e.preventDefault();
+        document.body.classList.add("light");
+    }
+    const hideDownloadForm = () => {
+        document.body.classList.remove("light");
+    }
+    document.querySelector("#formLink").addEventListener("click", showDownloadForm);
+    document.querySelector(".cross").addEventListener("click", hideDownloadForm);
 
 
     // Активаторы всяких функций
     const work = () => {
         cards.forEach(cards => { cards.addEventListener("click", OpenCard) });
         cards.forEach(cards => { cards.querySelector("#CloseCard").addEventListener("click", CloseCard) });
-        window.addEventListener("keydown", (e) => { if (e.keyCode === 27 && cardChild.classList == "unHideSon") CloseCard() });
     }
 
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && cardChild.classList.contains("unHideSon")) { 
+            CloseCard();
+        }
+    });
 
-    if (window.innerWidth > "500") {
-        return work(true);
-    } else {
-        window.addEventListener("resize", () => {
-            if (window.innerWidth > "500") {
-                return work();
-            } else if (window.innerWidth <= "500") {
-                return
-            }
-        })
+
+    const RES = () => { 
+        if (window.innerWidth > "800") {
+            return work();
+        }
     }
+    RES();
+    window.addEventListener("resize", RES)
 })

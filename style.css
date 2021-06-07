@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -28,7 +29,6 @@ nav {
     justify-content: space-around;
 }
 nav .nav-main {
-    /* width: 100%; */
     height: 40px;
 
     display: flex;
@@ -38,7 +38,7 @@ nav .nav-main {
 nav .nav-main #navbar-toggler {
     display: none;
 }
-nav a {
+a {
     z-index: 1;
     position: relative;
     text-decoration: none;
@@ -72,7 +72,9 @@ nav .site-links a::after {
 	transform: translateX(-20px);
 }
 nav .site-links a:hover::before,
-nav .site-links a:hover::after {
+nav .site-links a:hover::after,
+nav .site-links a:focus::before,
+nav .site-links a:focus::after {
 	opacity: 1;
 	transform: translateX(0px);
 }
@@ -80,7 +82,7 @@ nav .site-links a:hover::after {
 
 header h1 {
     font-family: 'Roboto Mono', monospace;
-    font-size: 140px;
+    font-size: 15vh;
     letter-spacing: .1em;
     text-shadow:
       0 1px 0 #2e2e2e, 
@@ -104,7 +106,7 @@ header h1 {
 main .CardsList {
     display: flex;
     padding: 1vh;
-    padding-bottom: 5vh;
+    padding-bottom: 15vh;
     cursor: pointer;
 }
 main .Other {
@@ -114,24 +116,26 @@ main .Other {
     flex-direction: column;
     background-color: #313131;
 }
-main section {
+main .CardsList section {
+    z-index: 0;
     position: relative;
 }
 main .CardsList .CardOpen::after {
-    content: "";
+    content: "open";
     width: 100%;
     opacity: 0;
     position: absolute; bottom: -10px;
+    transition-duration: 0.3s;
 }
 main .CardsList .CardOpen:hover::after {
     content: "open";
     opacity: 1;
     bottom: 0;
     background-color: #383838;
-    transition-duration: 0.3s;
 }
 main .CardsList section .CloseCard::after {
     content: "close";
+    z-index: 5;
     width: 100%;
     background-color: #383838;
     position: absolute; bottom: 0; left: 0;
@@ -140,10 +144,79 @@ main .CardsList section:hover {
     z-index: 1;
     box-shadow: 0px 0px 5px 1px green;
     transition-duration: 0.1s;
-    transition-property: box-shadow;
+}
+main .CardSon {
+    width: 90vw;
+}
+main .CardSon .Pem {
+    margin: 2em 0;
+}
+main .CardSon .ul-liFath {
+    display: flex;
+    text-align: left;
+}
+main .CardSon .downloadBtn {
+    padding: 10px 0;
+    width: 30vw;
+    margin-top: 5vh;
+
+    outline: none;
+    cursor: pointer;
+
+    color: #ffffff;
+    background-color: #037203;
+
+    border: none;
+    border-radius: 15px;
+
+    transition-duration: 0.1s;
+}
+main .CardSon .downloadBtn:hover {
+    width: 31vw;
+}
+main .CardSon .downloadBtn:active {
+    background-color: #056405;
+    transform: translateY(2px);
+}
+main .downloadForm {
+    background: #404040;
+    border: 2px solid #2c2c2c;
+    border-radius: 1rem;
+
+    width: 90vw;
+    height: 90vh;
+    
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+    display: none;
+    z-index: 5;
+}
+.downloadForm>.cross {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+
+    font-size: 4vh;
+    cursor: pointer;
+}
+body.light::before {
+    content: "";
+    z-index: 5;
+    background-color: rgba(5, 5, 5, .6);
+
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+body.light .downloadForm {
+    display: block;
 }
 /* Комментарии */
-#disqus_thread {
+main #disqus_thread {
     width: 80%;
     margin-top: 2rem;
 }
@@ -176,12 +249,12 @@ footer {
     transition-property: width opacity margin;
 }
 
-.otherBgG {
+main .otherBgG {
     background-color: #404040;
     margin-left: -1px;
     border: 1px solid green;
 }
-.otherBgB {
+main .otherBgB {
     background-color: #3b3b3b;
     margin-left: -1px;
     border: 1px solid green;
@@ -206,91 +279,5 @@ footer {
 
     to {
         opacity: 1;
-    }
-}
-
-
-/* Для телефонов */
-@media screen and (max-width: 800px) {
-    main .CardsList {
-        flex-direction: column;
-    }
-    main .CardsList section {
-        margin-bottom: 3vh;
-    }
-    main .CardsList .CardOpen:hover::after {
-        opacity: 0;
-    }
-
-
-    .hideCard {
-        width: 100%;
-        opacity: 1;
-    }
-    .HideSon {
-        display: block;
-    }
-
-    nav {
-        justify-content: none;
-        flex-direction: column;
-    }
-    nav .nav-main {
-        width: 100%;
-    }
-    nav .nav-main #navbar-toggler {
-        display: inline;
-        border: 0;
-        color: #999999;
-        outline: none;
-        background: transparent;
-        padding: .25rem .75rem;
-    }
-    nav .site-links {
-        width: 100%;
-        height: 0;
-        opacity: 0;
-
-        overflow: hidden;
-        background-color: #2D2D2D;
-        transition-duration: 1s;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        box-sizing: border-box;
-    }
-    nav .site-links-show {
-        height: 5vh;
-        opacity: 1;
-        border-top: 1px solid #353535;
-    }
-    nav a img {
-        transform: scale(1.3) rotate(0);
-    }
-    nav a:hover img,
-    nav a:focus img {
-        transform: scale(1.3) rotate(0);
-    }
-    nav .site-links a::before,
-    nav .site-links a::after {
-        display: unset;
-        opacity: 0;
-        transition: none;
-    }
-    nav .site-links a::before {
-        margin-right: 0;
-        content: '';
-        transform: none;
-    }
-    nav .site-links a::after {
-        margin-left: 0;
-        content: '';
-        transform: none;
-    }
-    nav .site-links a:hover::before,
-    nav .site-links a:hover::after {
-        opacity: 0;
-        transform: none;
     }
 }
