@@ -100,7 +100,7 @@ window.addEventListener("load", () => {
         })
     })
 
-    // Форма загрузки
+    // Форма загрузки sefsefsef
     // const showDownloadForm = (e) => {
     //     e.preventDefault();
     //     document.body.classList.add("light");
