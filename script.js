@@ -101,15 +101,15 @@ window.addEventListener("load", () => {
     })
 
     // Форма загрузки
-    const showDownloadForm = (e) => {
-        e.preventDefault();
-        document.body.classList.add("light");
-    }
-    const hideDownloadForm = () => {
-        document.body.classList.remove("light");
-    }
-    document.querySelector("#formLink").addEventListener("click", showDownloadForm);
-    document.querySelector(".cross").addEventListener("click", hideDownloadForm);
+    // const showDownloadForm = (e) => {
+    //     e.preventDefault();
+    //     document.body.classList.add("light");
+    // }
+    // const hideDownloadForm = () => {
+    //     document.body.classList.remove("light");
+    // }
+    // document.querySelector("#formLink").addEventListener("click", showDownloadForm);
+    // document.querySelector(".cross").addEventListener("click", hideDownloadForm);
 
 
     // Активаторы всяких функций

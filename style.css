@@ -148,9 +148,6 @@ main .CardsList section:hover {
 main .CardSon {
     width: 90vw;
 }
-main .CardSon .Pem {
-    margin: 2em 0;
-}
 main .CardSon .ul-liFath {
     display: flex;
     text-align: left;
@@ -183,12 +180,12 @@ main .downloadForm {
     border: 2px solid #2c2c2c;
     border-radius: 1rem;
 
-    width: 90vw;
-    height: 90vh;
+    width: 80vw;
+    height: 70vh;
     
     position: fixed;
-    top: 5vh;
-    left: 5vw;
+    top: 15vh;
+    left: 10vw;
     display: none;
     z-index: 5;
 }
@@ -199,6 +196,16 @@ main .downloadForm {
 
     font-size: 4vh;
     cursor: pointer;
+}
+main .downloadForm .box { 
+    padding: 2.5vh 2.5vw;
+}
+main .downloadForm form {
+    border-radius: 1vh;
+    border: 0.5vh solid #808080;
+
+    text-align: left;
+    padding: 15vh 5vw;
 }
 body.light::before {
     content: "";
@@ -258,6 +265,10 @@ main .otherBgB {
     background-color: #3b3b3b;
     margin-left: -1px;
     border: 1px solid green;
+}
+
+.Pem {
+    margin: 2em 0;
 }
 
 /* Исчезновение карточек с названиями раздела и анимация*/
