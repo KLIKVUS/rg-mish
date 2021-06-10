@@ -100,17 +100,6 @@ window.addEventListener("load", () => {
         })
     })
 
-    // Форма загрузки sefsefsef
-    // const showDownloadForm = (e) => {
-    //     e.preventDefault();
-    //     document.body.classList.add("light");
-    // }
-    // const hideDownloadForm = () => {
-    //     document.body.classList.remove("light");
-    // }
-    // document.querySelector("#formLink").addEventListener("click", showDownloadForm);
-    // document.querySelector(".cross").addEventListener("click", hideDownloadForm);
-
 
     // Активаторы всяких функций
     const work = () => {
